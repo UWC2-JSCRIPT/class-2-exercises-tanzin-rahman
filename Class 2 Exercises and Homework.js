@@ -85,15 +85,15 @@ const date = '1/21/2019';
 
 const assignmentDate = new Date(date);
 
-console.log(assignmentDate); 
+console.log(assignmentDate.toLocaleDateString()); 
 
 // 8. Create a new Date instance to represent the dueDate.  
 // This will be exactly 7 days after the assignment date.
-console.log("\n After adding 7 days to the Assignmentdate the due date will be: ");
+console.log("\nAfter adding 7 days to the Assignmentdate the due date will be: ");
 
-const days = 7*24*60*60*1000;
+const days = 7*24*60*60*1000;     // convert 7 days in milliseconds.
 let duedate = new Date(assignmentDate.getTime() + days);
-console.log(duedate.toString());
+console.log(duedate.toLocaleDateString());
 
 // 9. Use dueDate values to create an HTML time tag in format
 // <time datetime="YYYY-MM-DD">Month day, year</time>
