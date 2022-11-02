@@ -113,5 +113,7 @@ const months = [
   'December'
 ];
 
-
+let utcDate = new Date();
+utcDate = duedate.toUTCString();
 // 10. log this value using console.log
+console.log(utcDate);
