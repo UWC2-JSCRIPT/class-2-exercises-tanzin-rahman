@@ -109,21 +109,14 @@ const months = [
 
 // return 'YYYY-MM-DD'
 function getShortDate(sDate){
-  let firstDateFormat = dueDate.getFullYear()+'-'+dueDate.getMonth()+1+'-'+dueDate.getDate();
+  let firstDateFormat = sDate.getFullYear()+'-'+sDate.getMonth()+1+'-'+sDate.getDate();
   console.log(firstDateFormat);
   return firstDateFormat;
 }
-
-getShortDate(dueDate);
-
-function getLongDate(fDate){
-  let secondDateFormat = months[dueDate.getMonth()]+' '+dueDate.getDate()+', '+dueDate.getFullYear();
+function getLongDate(lDate){
+  let secondDateFormat = months[lDate.getMonth()]+' '+lDate.getDate()+', '+lDate.getFullYear();
   console.log(secondDateFormat);
   return secondDateFormat;
 }
-
-getLongDate(dueDate);
-
-
 // 10. log this value using console.log
 console.log("<time datetime=\""+getShortDate(dueDate)+"\">"+getLongDate(dueDate)+"</time>");
