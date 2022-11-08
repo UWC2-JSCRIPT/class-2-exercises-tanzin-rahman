@@ -31,8 +31,7 @@ let arr = [
   ["X","-","X"]
 ]
 
-for(let i=0; i<3; i++)
-{
+for(let i=0; i<3; i++){
     console.log(arr[i].toString());
 }
 
@@ -61,9 +60,7 @@ for(let i=0; i<3; i++)
 
 
 console.log("\nUsing Regular Expression to test validity of an Email");
-
 const myEmail = 'tafheem_23@sust.edu.com';
-
 const globalRegex = new RegExp('^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$');
 
 if (globalRegex.exec(myEmail)) {
@@ -80,20 +77,17 @@ else{
 // Convert this string to a Date
 
 console.log("\nConverting string to date");
-
 const date = '1/21/2019';
-
 const assignmentDate = new Date(date);
-
 console.log(assignmentDate.toLocaleDateString()); 
 
 // 8. Create a new Date instance to represent the dueDate.  
 // This will be exactly 7 days after the assignment date.
-console.log("\nAfter adding 7 days to the Assignmentdate the due date will be: ");
 
+console.log("\nAfter adding 7 days to the Assignmentdate the due date will be: ");
 const days = 7*24*60*60*1000;     // convert 7 days in milliseconds.
-let duedate = new Date(assignmentDate.getTime() + days);
-console.log(duedate.toLocaleDateString());
+let dueDate = new Date(assignmentDate.getTime() + days);
+console.log(dueDate.toLocaleDateString());
 
 // 9. Use dueDate values to create an HTML time tag in format
 // <time datetime="YYYY-MM-DD">Month day, year</time>
@@ -113,7 +107,23 @@ const months = [
   'December'
 ];
 
-let utcDate = new Date();
-utcDate = duedate.toUTCString();
+// return 'YYYY-MM-DD'
+function getShortDate(sDate){
+  let firstDateFormat = dueDate.getFullYear()+'-'+dueDate.getMonth()+1+'-'+dueDate.getDate();
+  console.log(firstDateFormat);
+  return firstDateFormat;
+}
+
+getShortDate(dueDate);
+
+function getLongDate(fDate){
+  let secondDateFormat = months[dueDate.getMonth()]+' '+dueDate.getDate()+', '+dueDate.getFullYear();
+  console.log(secondDateFormat);
+  return secondDateFormat;
+}
+
+getLongDate(dueDate);
+
+
 // 10. log this value using console.log
-console.log(utcDate);
+console.log("<time datetime=\""+getShortDate(dueDate)+"\">"+getLongDate(dueDate)+"</time>");
