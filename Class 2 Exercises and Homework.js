@@ -107,10 +107,14 @@ const months = [
   'December'
 ];
 
-let sDate = dueDate;
-// return 'YYYY-MM-DD'
-const formattedDate = dueDate.getFullYear()+'-'+dueDate.getMonth()+1+'-'+dueDate.getDate();
-const stringDate = months[dueDate.getMonth()]+' '+dueDate.getDate()+', '+dueDate.getFullYear();
+let formattedDate = new Date();
+let stringDate = new Date();
+
+// Will return 'YYYY-MM-DD'
+formattedDate = dueDate.getFullYear()+'-'+dueDate.getMonth()+1+'-'+dueDate.getDate();
+
+// change 'YYYY-MM-DD' to 'Month day, year'
+stringDate = months[dueDate.getMonth()]+' '+dueDate.getDate()+', '+dueDate.getFullYear();
 
 // 10. log this value using console.log
 console.log(`<time datetime="${formattedDate}"> ${stringDate} </time>`);
